@@ -1797,6 +1797,24 @@ export default function App() {
       termoBusca: "",
       mostrarSugestoes: false,
     },
+    function limparConsulta(index) {
+  const novos = [...blocos];
+  novos[index] = {
+    codigo: "",
+    descricao: "",
+    preco: "",
+    entrada: "",
+    entradaPercentual: 0,
+    parcelas: 0,
+    custoBase: 0,
+    robBase: 0,
+    quantidade: 1,
+    termoBusca: "",
+    mostrarSugestoes: false,
+  };
+  setBlocos(novos);
+}
+
   ]);
 
   const adicionarBloco = () => {
@@ -1938,6 +1956,21 @@ export default function App() {
                   )
                 }
               />
+              <button
+               onClick={() => limparConsulta(i)}
+               style={{
+                 marginTop: "10px",
+                 backgroundColor: "#d9534f",
+                 color: "white",
+                 padding: "8px 12px",
+                 border: "none",
+                 borderRadius: "4px",
+                 cursor: "pointer"
+               }}
+              >
+                 Limpar Consulta
+              </button>
+
 
               {bloco.mostrarSugestoes && (
                 <ul
