@@ -1756,7 +1756,7 @@ const produtos = {
 export default function App() {
   // O conteúdo da função começa aqui e só vai ser fechado no final do arquivo
 
-  };
+  
 
   const corClassificacao = (classe) => {
     switch (classe) {
@@ -1796,7 +1796,8 @@ export default function App() {
       quantidade: 1,
       termoBusca: "",
       mostrarSugestoes: false,
-    },
+    }
+  ]);
     function limparConsulta(index) {
   const novos = [...blocos];
   novos[index] = {
