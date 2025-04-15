@@ -1753,70 +1753,69 @@ const produtos = {
     robOriginal: 0.535521992568835,
   },
 
-export default function App() {
-  // O conteúdo da função começa aqui e só vai ser fechado no final do arquivo
+     export default function App() {
+      // O conteúdo da função começa aqui e só vai ser fechado no final do arquivo
+    
+      const corClassificacao = (classe) => {
+        switch (classe) {
+          case "PERFEITO":
+            return "#00cc00";
+          case "IDEAL":
+            return "#00ff7f";
+          case "ACEITÁVEL":
+            return "#b3ffcc";
+          case "INADEQUADO - SOMENTE PARA CLIENTES ESTRATÉGICOS":
+            return "#ffff99";
+          case "RUIM - APENAS OVER ESTOQUE OU COM AUTORIZAÇÃO":
+            return "#ff9999";
+          case "BOM - REVENDEDORES":
+            return "#33ccff";
+          case "RUIM - REVENDEDORES ESTRATÉGICOS":
+            return "#ffcccc";
+          case "IMPORTADORES OU OVER ESTOQUE":
+            return "#ffe6e6";
+          case "PROIBIDO":
+            return "#990000";
+          default:
+            return "transparent";
+        }
+      };
+    
 
-  
-
-  const corClassificacao = (classe) => {
-    switch (classe) {
-      case "PERFEITO":
-        return "#00cc00";
-      case "IDEAL":
-        return "#00ff7f";
-      case "ACEITÁVEL":
-        return "#b3ffcc";
-      case "INADEQUADO - SOMENTE PARA CLIENTES ESTRATÉGICOS":
-        return "#ffff99";
-      case "RUIM - APENAS OVER ESTOQUE OU COM AUTORIZAÇÃO":
-        return "#ff9999";
-      case "BOM - REVENDEDORES":
-        return "#33ccff";
-      case "RUIM - REVENDEDORES ESTRATÉGICOS":
-        return "#ffcccc";
-      case "IMPORTADORES OU OVER ESTOQUE":
-        return "#ffe6e6";
-      case "PROIBIDO":
-        return "#990000";
-      default:
-        return "transparent";
-    }
-  };
-
-  const [blocos, setBlocos] = useState([
-    {
-      codigo: "",
-      descricao: "",
-      preco: "",
-      entrada: "",
-      entradaPercentual: 0,
-      parcelas: 0,
-      custoBase: 0,
-      robBase: 0,
-      quantidade: 1,
-      termoBusca: "",
-      mostrarSugestoes: false,
-    }
-  ]);
-    function limparConsulta(index) {
-  const novos = [...blocos];
-  novos[index] = {
-    codigo: "",
-    descricao: "",
-    preco: "",
-    entrada: "",
-    entradaPercentual: 0,
-    parcelas: 0,
-    custoBase: 0,
-    robBase: 0,
-    quantidade: 1,
-    termoBusca: "",
-    mostrarSugestoes: false,
-  };
-  setBlocos(novos);
-}
-
-  ]);
+      const [blocos, setBlocos] = useState([
+        {
+          codigo: "",
+          descricao: "",
+          preco: "",
+          entrada: "",
+          entradaPercentual: 0,
+          parcelas: 0,
+          custoBase: 0,
+          robBase: 0,
+          quantidade: 1,
+          termoBusca: "",
+          mostrarSugestoes: false,
+        }
+      ]);
+      
+      function limparConsulta(index) {
+        const novos = [...blocos];
+        novos[index] = {
+          codigo: "",
+          descricao: "",
+          preco: "",
+          entrada: "",
+          entradaPercentual: 0,
+          parcelas: 0,
+          custoBase: 0,
+          robBase: 0,
+          quantidade: 1,
+          termoBusca: "",
+          mostrarSugestoes: false,
+        };
+        setBlocos(novos);
+      }
+      
 
   const adicionarBloco = () => {
     setBlocos([
