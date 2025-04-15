@@ -354,8 +354,7 @@ const produtos = {
     robOriginal: 0.472268628441156,
   },
   FT22007: {
-    descricao:
-      "CALIBRADOR DE PNEUS POR NITROGENIO 40L 2 PNEUS FORTA TECH C300",
+    descricao: "CALIBRADOR DE PNEUS POR NITROGENIO 40L 2 PNEUS FORTA TECH C300",
     precoOriginal: 14606.273324982497797,
     robOriginal: 0.489858242839532,
   },
@@ -735,8 +734,7 @@ const produtos = {
     robOriginal: 0.441784794318523,
   },
   FT24006: {
-    descricao:
-      "ELEVADOR HIDRAULICO FORTA TECH ELEVA EP502 PÓRTICO 5TON CINZA",
+    descricao: "ELEVADOR HIDRAULICO FORTA TECH ELEVA EP502 PÓRTICO 5TON CINZA",
     precoOriginal: 34500.0,
     robOriginal: 0.403926766383817,
   },
@@ -975,8 +973,7 @@ const produtos = {
     robOriginal: 0.577883741599205,
   },
   INN023: {
-    descricao:
-      "MACACO PNEUMATICO RODA LIVRE 2 TON. FORTA TECH-MP2000 NACIONAL",
+    descricao: "MACACO PNEUMATICO RODA LIVRE 2 TON. FORTA TECH-MP2000 NACIONAL",
     precoOriginal: 4417.483350000000428,
     robOriginal: 0.449235695642181,
   },
@@ -999,8 +996,7 @@ const produtos = {
     robOriginal: 0.472935775279513,
   },
   L00311: {
-    descricao:
-      "OSCILOSCOPIO DOIS CANAIS E MULTIMETRO PARA EV - ISMARTEV OM210",
+    descricao: "OSCILOSCOPIO DOIS CANAIS E MULTIMETRO PARA EV - ISMARTEV OM210",
     precoOriginal: 6086.070621145830046,
     robOriginal: 0.53266310563823,
   },
@@ -1605,8 +1601,7 @@ const produtos = {
     robOriginal: 0.425455414481774,
   },
   "00447": {
-    descricao:
-      'X-431 SMARTLINK B "MASTER" (HARDWARE PARA ASSESSORAR) - LAUNCH',
+    descricao: 'X-431 SMARTLINK B "MASTER" (HARDWARE PARA ASSESSORAR) - LAUNCH',
     precoOriginal: 7829.072097000000213,
     robOriginal: 0.588325550822131,
   },
@@ -1627,8 +1622,7 @@ const produtos = {
     robOriginal: 0.390045085272336,
   },
   L00119: {
-    descricao:
-      'XPROG "3" PARA IMOBILIZADOR PARA PAD III/V/VII/PRO5/PRO1sV5.0',
+    descricao: 'XPROG "3" PARA IMOBILIZADOR PARA PAD III/V/VII/PRO5/PRO1sV5.0',
     precoOriginal: 9139.218631997717239,
     robOriginal: 0.489717303649459,
   },
@@ -1695,8 +1689,7 @@ const produtos = {
     robOriginal: 0.535521992568835,
   },
   L00597: {
-    descricao:
-      "X-PROG3 Adaptador cabo 8 (VGS2-FDCT/VGS-FDCT),RoHS - 307110084",
+    descricao: "X-PROG3 Adaptador cabo 8 (VGS2-FDCT/VGS-FDCT),RoHS - 307110084",
     precoOriginal: 379.53295380000003,
     robOriginal: 0.535521992568835,
   },
@@ -1752,70 +1745,68 @@ const produtos = {
     precoOriginal: 875.845278000000121,
     robOriginal: 0.535521992568835,
   },
+};
+export default function App() {
+  // O conteúdo da função começa aqui e só vai ser fechado no final do arquivo
 
-     export default function App() {
-      // O conteúdo da função começa aqui e só vai ser fechado no final do arquivo
-    
-      const corClassificacao = (classe) => {
-        switch (classe) {
-          case "PERFEITO":
-            return "#00cc00";
-          case "IDEAL":
-            return "#00ff7f";
-          case "ACEITÁVEL":
-            return "#b3ffcc";
-          case "INADEQUADO - SOMENTE PARA CLIENTES ESTRATÉGICOS":
-            return "#ffff99";
-          case "RUIM - APENAS OVER ESTOQUE OU COM AUTORIZAÇÃO":
-            return "#ff9999";
-          case "BOM - REVENDEDORES":
-            return "#33ccff";
-          case "RUIM - REVENDEDORES ESTRATÉGICOS":
-            return "#ffcccc";
-          case "IMPORTADORES OU OVER ESTOQUE":
-            return "#ffe6e6";
-          case "PROIBIDO":
-            return "#990000";
-          default:
-            return "transparent";
-        }
-      };
-    
+  const corClassificacao = (classe) => {
+    switch (classe) {
+      case "PERFEITO":
+        return "#00cc00";
+      case "IDEAL":
+        return "#00ff7f";
+      case "ACEITÁVEL":
+        return "#b3ffcc";
+      case "INADEQUADO - SOMENTE PARA CLIENTES ESTRATÉGICOS":
+        return "#ffff99";
+      case "RUIM - APENAS OVER ESTOQUE OU COM AUTORIZAÇÃO":
+        return "#ff9999";
+      case "BOM - REVENDEDORES":
+        return "#33ccff";
+      case "RUIM - REVENDEDORES ESTRATÉGICOS":
+        return "#ffcccc";
+      case "IMPORTADORES OU OVER ESTOQUE":
+        return "#ffe6e6";
+      case "PROIBIDO":
+        return "#990000";
+      default:
+        return "transparent";
+    }
+  };
 
-      const [blocos, setBlocos] = useState([
-        {
-          codigo: "",
-          descricao: "",
-          preco: "",
-          entrada: "",
-          entradaPercentual: 0,
-          parcelas: 0,
-          custoBase: 0,
-          robBase: 0,
-          quantidade: 1,
-          termoBusca: "",
-          mostrarSugestoes: false,
-        }
-      ]);
-      
-      function limparConsulta(index) {
-        const novos = [...blocos];
-        novos[index] = {
-          codigo: "",
-          descricao: "",
-          preco: "",
-          entrada: "",
-          entradaPercentual: 0,
-          parcelas: 0,
-          custoBase: 0,
-          robBase: 0,
-          quantidade: 1,
-          termoBusca: "",
-          mostrarSugestoes: false,
-        };
-        setBlocos(novos);
-      }
-      
+  const [blocos, setBlocos] = useState([
+    {
+      codigo: "",
+      descricao: "",
+      preco: "",
+      entrada: "",
+      entradaPercentual: 0,
+      parcelas: 0,
+      custoBase: 0,
+      robBase: 0,
+      quantidade: 1,
+      termoBusca: "",
+      mostrarSugestoes: false,
+    },
+  ]);
+
+  function limparConsulta(index) {
+    const novos = [...blocos];
+    novos[index] = {
+      codigo: "",
+      descricao: "",
+      preco: "",
+      entrada: "",
+      entradaPercentual: 0,
+      parcelas: 0,
+      custoBase: 0,
+      robBase: 0,
+      quantidade: 1,
+      termoBusca: "",
+      mostrarSugestoes: false,
+    };
+    setBlocos(novos);
+  }
 
   const adicionarBloco = () => {
     setBlocos([
@@ -1957,20 +1948,19 @@ const produtos = {
                 }
               />
               <button
-               onClick={() => limparConsulta(i)}
-               style={{
-                 marginTop: "10px",
-                 backgroundColor: "#d9534f",
-                 color: "white",
-                 padding: "8px 12px",
-                 border: "none",
-                 borderRadius: "4px",
-                 cursor: "pointer"
-               }}
+                onClick={() => limparConsulta(i)}
+                style={{
+                  marginTop: "10px",
+                  backgroundColor: "#d9534f",
+                  color: "white",
+                  padding: "8px 12px",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                }}
               >
-                 Limpar Consulta
+                Limpar Consulta
               </button>
-
 
               {bloco.mostrarSugestoes && (
                 <ul
